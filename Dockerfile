@@ -1,5 +1,6 @@
 FROM jbonachera/vernemq
-ADD https://github.com/jbonachera/iot-pki/releases/download/v1.0.2/client /usr/local/bin/pki-wrap
+ENV ID_VERSION=v1.0.3
+ADD https://github.com/jbonachera/iot-pki/releases/download/${ID_VERSION}/client /usr/local/bin/pki-wrap
 RUN chmod +x /usr/local/bin/pki-wrap
 RUN apk -U add ca-certificates && \
     rm -rf /var/cache/apk/*
