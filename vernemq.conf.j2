@@ -56,3 +56,8 @@ listener.ssl.keyfile = {{ SSL_KEY }}
 listener.ssl.require_certificate = on
 listener.ssl.use_identity_as_username = on
 {% endif %}
+
+{% if REGISTER_HOOK_ENDPOINT %}
+vmq_webhooks.register.hook = auth_on_register
+vmq_webhooks.register.endpoint = {{ REGISTER_HOOK_ENDPOINT }}
+{% endif %}
