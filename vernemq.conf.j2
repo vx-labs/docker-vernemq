@@ -66,3 +66,8 @@ vmq_webhooks.register.endpoint = {{ REGISTER_HOOK_ENDPOINT }}
 vmq_webhooks.publish.hook = auth_on_publish
 vmq_webhooks.publish.endpoint = {{ PUBLISH_HOOK_ENDPOINT }}
 {% endif %}
+
+{% if SUBSCRIBE_HOOK_ENDPOINT %}
+vmq_webhooks.subscribe.hook = auth_on_subscribe
+vmq_webhooks.subscribe.endpoint = {{ SUBSCRIBE_HOOK_ENDPOINT }}
+{% endif %}
