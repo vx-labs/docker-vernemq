@@ -61,3 +61,8 @@ listener.ssl.use_identity_as_username = on
 vmq_webhooks.register.hook = auth_on_register
 vmq_webhooks.register.endpoint = {{ REGISTER_HOOK_ENDPOINT }}
 {% endif %}
+
+{% if PUBLISH_HOOK_ENDPOINT %}
+vmq_webhooks.publish.hook = auth_on_publish
+vmq_webhooks.publish.endpoint = {{ PUBLISH_HOOK_ENDPOINT }}
+{% endif %}
