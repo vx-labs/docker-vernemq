@@ -4,4 +4,5 @@ ADD https://github.com/jbonachera/iot-pki/releases/download/${ID_VERSION}/client
 RUN chmod +x /usr/local/bin/pki-wrap
 RUN apk -U add ca-certificates && \
     rm -rf /var/cache/apk/*
+COPY vernemq.conf.j2 /etc/vernemq/vernemq.conf.j2
 ENTRYPOINT ["/usr/local/bin/pki-wrap", "/sbin/entrypoint"]
