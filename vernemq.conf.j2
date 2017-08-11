@@ -46,6 +46,7 @@ erlang.distribution.port_range.minimum = 9100
 erlang.distribution.port_range.maximum = 9109
 listener.tcp.default = {{ LISTEN_IP }}:1883
 listener.ws.default = {{ LISTEN_IP }}:8080
+listener.ws.mountpoint = wss
 listener.vmq.clustering = {{ SELF_IP }}:44053
 listener.http.metrics = {{ LISTEN_IP }}:8888
 {% if SSL_AUTH == "yes" %}
@@ -55,6 +56,7 @@ listener.ssl.certfile = {{ SSL_CERT }}
 listener.ssl.keyfile = {{ SSL_KEY }}
 listener.ssl.require_certificate = on
 listener.ssl.use_identity_as_username = on
+listener.ssl.mountpoint = mqtts
 {% endif %}
 
 {% if REGISTER_HOOK_ENDPOINT %}
